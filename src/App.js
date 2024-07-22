@@ -21,6 +21,7 @@ const ProtectedRoute = ({ element: Element }) => {
   return memberId ? <Element /> : <Navigate to="/login" />;
 };
 
+
 function App() {
   return (
     <Router>

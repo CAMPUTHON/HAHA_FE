@@ -5,6 +5,7 @@ import styles from './signup.module.css';
 import profileImagePlaceholder from '../../assets/images/profile.JPG'; // 프로필 이미지 경로를 적절히 수정하세요
 import eyeIcon from '../../assets/images/eye.png'; // 눈 아이콘 경로를 적절히 수정하세요
 import {ReactComponent as Profile } from '../../assets/images/profile_exam.svg';
+import { baseURL } from "../../baseURL";
 
 const Signup = () => {
   const [profileImage, setProfileImage] = useState();
@@ -42,7 +43,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        'https://port-0-haha-be-lytx9n86c2df9578.sel4.cloudtype.app/api/member/signup',
+        '${baseURL}api/member/signup',
         formData
       );
       console.log(response.data);

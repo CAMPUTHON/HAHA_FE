@@ -6,6 +6,7 @@ import OrangeButton from "../../components/button/orange_button";
 import { ReactComponent as Run } from "../../components/images/run.svg";
 import { ReactComponent as Pen } from "../../components/images/pencil.svg";
 import { ReactComponent as Dice } from "../../components/images/dice.svg";
+import { baseURL } from "../../baseURL";
 
 const Modal = ({ onClose, challengeId }) => {
   const handleConfirm = () => {
@@ -14,7 +15,7 @@ const Modal = ({ onClose, challengeId }) => {
         console.error('memberId가 저장되어 있지 않습니다.');
         return;
       }
-    const url = `https://port-0-haha-be-lytx9n86c2df9578.sel4.cloudtype.app/api/challenge/add/${challengeId}/${memberId}`;
+    const url = `${baseURL}api/challenge/add/${challengeId}/${memberId}`;
     const requestData = {
       isSuccess: true,
       code: "COMMON200",

@@ -6,6 +6,7 @@ import study from "../../assets/images/study.png";
 import relaxing from "../../assets/images/relaxing.png"; // 오타 수정
 import OrangeButton from "../../components/button/orange_button";
 import axios from "axios";
+import { baseURL } from "../../baseURL";
 
 function Search() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function Search() {
 
   const handleButtonClick = () => {
     if (selectedCategory && selectedDuration) {
-      const url = `https://port-0-haha-be-lytx9n86c2df9578.sel4.cloudtype.app/api/challenge/search?category=${selectedCategory}&time=${selectedDuration}`;
+      const url = `${baseURL}api/challenge/search?category=${selectedCategory}&time=${selectedDuration}`;
       axios
         .get(url)
         .then((response) => {

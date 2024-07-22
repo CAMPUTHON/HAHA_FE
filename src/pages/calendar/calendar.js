@@ -9,6 +9,8 @@ import { ReactComponent as Run } from "../../components/images/run.svg";
 import { ReactComponent as Pen } from "../../components/images/pencil.svg";
 import { ReactComponent as Dice } from "../../components/images/dice.svg";
 import { useNavigate } from "react-router-dom";
+import { baseURL } from "../../baseURL";
+
 
 Chart.register(ArcElement, Tooltip, Legend, Title);
 
@@ -52,8 +54,8 @@ function CustomCalendar() {
 
   const fetchChallengesAndRatio = (date) => {
     const memberId = 2;
-    const challengeUrl = `https://port-0-haha-be-lytx9n86c2df9578.sel4.cloudtype.app/api/challenge/get/calendar?date=${date}&memberId=${memberId}`;
-    const ratioUrl = `https://port-0-haha-be-lytx9n86c2df9578.sel4.cloudtype.app/api/ratio/${memberId}`;
+    const challengeUrl = `${baseURL}api/challenge/get/calendar?date=${date}&memberId=${memberId}`;
+    const ratioUrl = `${baseURL}api/ratio/${memberId}`;
 
     axios
       .get(challengeUrl)
