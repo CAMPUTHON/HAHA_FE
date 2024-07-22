@@ -3,7 +3,6 @@ import styles from './profileUpdate.module.css';
 import profileImage from '../../assets/images/profile_exam.svg'; 
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { baseURL } from '../../baseURL';
 import Modal from './Modal'; 
 
 const ProfileUpdate = () => {
@@ -28,7 +27,7 @@ const ProfileUpdate = () => {
         email: email
       };
 
-      await axios.patch(`${baseURL}api/mypage/update/${memberId}`, data, {
+      await axios.patch(`https://port-0-haha-be-lytx9n86c2df9578.sel4.cloudtype.app/api/mypage/update/${memberId}`, data, {
         headers: {
           'Content-Type': 'application/json',
         },

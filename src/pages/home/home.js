@@ -10,7 +10,6 @@ import ListBox from "../../components/listBox/listBox";
 import RendomBox from "../../components/rendomBox/rendomBox";
 import Modal from "../../components/Modal/Modal";
 import axios from "axios";
-import { baseURL } from "../../baseURL";
 
 function Home() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -71,7 +70,7 @@ function Home() {
         console.error('선택된 챌린지 ID가 없습니다.');
         return;
       }
-      const response = await axios.post(`${baseURL}api/challenge/complete/${selectedChallengeId}/${memberId}`, formData, {
+      const response = await axios.post(`https://port-0-haha-be-lytx9n86c2df9578.sel4.cloudtype.app/api/challenge/complete/${selectedChallengeId}/${memberId}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

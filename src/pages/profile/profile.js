@@ -8,7 +8,6 @@ import { ReactComponent as RedBadgeImage } from '../../assets/images/red.svg';
 import { ReactComponent as PurpleBadgeImage } from '../../assets/images/purple.svg'; 
 import { ReactComponent as BlueBadgeImage } from '../../assets/images/blue.svg'; 
 import axios from 'axios';
-import { baseURL } from '../../baseURL';
 import Modal from './Modal'; // 모달 컴포넌트 가져오기
 
 const Profile = () => {
@@ -51,7 +50,7 @@ const Profile = () => {
           return;
         }
 
-        const response = await axios.get(`${baseURL}api/mypage/get/${memberId}`);
+        const response = await axios.get(`https://port-0-haha-be-lytx9n86c2df9578.sel4.cloudtype.app/api/mypage/get/${memberId}`);
         const result = response.data.result;
         console.log(result);
         setProfileData(result);
