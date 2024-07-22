@@ -93,7 +93,7 @@ function Home() {
         console.error('memberId가 저장되어 있지 않습니다.');
         return;
       }
-      const response = await axios.get(`${baseURL}api/challenge/get/${memberId}`);
+      const response = await axios.get(`https://port-0-haha-be-lytx9n86c2df9578.sel4.cloudtype.app/api/challenge/get/${memberId}`);
       const data = response.data.result;
 
       setCurrentChallenges(data.currentChallenges);

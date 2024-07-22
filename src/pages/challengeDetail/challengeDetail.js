@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styles from './challengeDetail.module.css';
-import { baseURL } from '../../baseURL';
 import { ReactComponent as Dumbbel } from "../../assets/images/dumbbell.svg";
 import { ReactComponent as Study } from "../../assets/images/study.svg";
 import { ReactComponent as Dice_3D } from "../../assets/images/dice_3D.svg";
@@ -21,7 +20,7 @@ const ChallengeDetail = () => {
           console.error('memberId가 저장되어 있지 않습니다.');
           return;
         }
-        const response = await axios.get(`${baseURL}api/challenge/get/detail/${challengeId}/${memberId}`);
+        const response = await axios.get(`https://port-0-haha-be-lytx9n86c2df9578.sel4.cloudtype.app/api/challenge/get/detail/${challengeId}/${memberId}`);
         setChallenge(response.data.result);
       } catch (error) {
         console.error('챌린지 상세 정보를 가져오는 데 실패했습니다:', error);
